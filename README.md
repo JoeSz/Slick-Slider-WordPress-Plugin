@@ -56,3 +56,4 @@ OR
 * Added option for class, with this you can turn "Slider Syncing" on.
 * Activated some option for single slide insance too.
 * Fork plugin to GitHub
+* Update Slick Slider to 1.8.1
