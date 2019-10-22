@@ -1,5 +1,5 @@
 # Slick Slider WordPress Plugin
-This is a modified version of the [Slick Slider WordPress Plugin](https://wordpress.org/plugins/slick-slider).
+This is a forked/modified version of the [Slick Slider WordPress Plugin](https://wordpress.org/plugins/slick-slider).
 
 Slick Slider uses the awesome [slick slider](https://kenwheeler.github.io/slick/) (on [GitHub](https://github.com/kenwheeler/slick/)) written by Ken Wheeler.
 
@@ -53,4 +53,6 @@ OR
 ## Changelog
 
 = 0.5.2 - 2019-10-22 =
-* Update: Initial release
+* Added option for class, with this you can turn "Slider Syncing" on.
+* Activated some option for single slide insance too.
+* Fork plugin to GitHub
