@@ -10,7 +10,7 @@ class Slick_Slider_Output {
 	 * Number of Slick Sliders on same WordPress page.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @var integer
 	 */
 	private static $slick_instance = 0;
@@ -19,7 +19,7 @@ class Slick_Slider_Output {
 	 * Initiate registering of assets and replacing default WordPress gallery HTML with Slick Slider markup.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @return If PHP version is too low.
 	 */
 	public static function init_slider() {
@@ -69,7 +69,7 @@ class Slick_Slider_Output {
 			'1.8.0',
 			true
 		);
-		
+
 		wp_register_style(
 			'slick-slider-core',
 			Slick_Slider_Main::plugin_url( 'bower_components/slick-carousel/slick/slick.css' ),
@@ -107,14 +107,14 @@ class Slick_Slider_Output {
 	 * Enqueue required assets, build HTML markup for Slick Slider and return it.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param string $output    HTML markup.
 	 * @param array $atts       Attributes from the gallery shortcode.
 	 * @param integer $instance Unique numeric ID of this gallery shortcode instance.
 	 * @return string           Complete Slick Slider markup which can be modified by multiple filters.
 	 */
 	public static function slick_markup( $output = '', $atts, $instance ) {
-		
+
 		if ( isset( $atts['slick_active'] ) && 'true' === $atts['slick_active'] ) {
 
 			global $post;
@@ -205,11 +205,14 @@ class Slick_Slider_Output {
 
 			do_action( 'slick_slider_before_slider', $atts, $post->ID, self::$slick_instance );
 
+            $class = ( isset( $atts['class'] ) ) ? ' ' . sanitize_html_class( $atts['class'] ) : '';
+
 			$output = [];
 			$output[] = '<div class="slick-slider-wrapper">';
 			$output[] = sprintf(
-				'<div class="slick-slider slick-slider--size-%s" id="slick-slider-%s" %s>',
-				sanitize_html_class( $atts['size'] ),
+				'<div class="slick-slider slick-slider--size-%s %s" id="slick-slider-%s" %s>',
+                sanitize_html_class( $atts['size'] ),
+                $class,
 				$atts['slick_instance'],
 				! empty( $options )
 					? sprintf(

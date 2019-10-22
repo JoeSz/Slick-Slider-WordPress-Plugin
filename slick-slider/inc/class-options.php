@@ -13,7 +13,7 @@ class Slick_Slider_Options {
 	 * The function uses the default options array whose values are replaced with user options.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param string $field Field to get.
 	 * @return string|array Array of all options if $field not set, single field otherwise or empty string.
 	 */
@@ -49,7 +49,7 @@ class Slick_Slider_Options {
 	 * Update Slick Slider settings to database.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $fields    Fields to update.
 	 * @param boolean $prepare Whether to prepare options before saving.
 	 *                         Preparing means putting all options into multi-dimensional array.
@@ -132,7 +132,7 @@ class Slick_Slider_Options {
 	 * It only outputs options which differ from default Slick Slider options.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param array $atts Shortcode parameters.
 	 * @return array      Slick Slider options.
 	 */
@@ -148,7 +148,7 @@ class Slick_Slider_Options {
 				$options_merged[ $option ] = $value['value'];
 			}
 		}
-		
+
 		$options_slider_raw = array_filter( $atts, function( $value, $key ) {
 			return 0 === strpos( $key, 'sl_');
 		}, true );
@@ -173,7 +173,7 @@ class Slick_Slider_Options {
 	 * Render Sick Slider option’s HTML markup for different locations.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @param string $location Where the markup should be inserted (markup differs based on location).
 	 * @return                 If $location is empty.
 	 */
@@ -256,7 +256,7 @@ class Slick_Slider_Options {
 					);
 				};
 				break;
-			
+
 			case 'post' :
 			case 'post-new' :
 				foreach ( $options as $option => $array_values ) {
@@ -329,7 +329,7 @@ class Slick_Slider_Options {
 	 * Get Slick Slider's default options and return them.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @return array Slick Slider options encoded.
 	 */
 	public static function default_options() {
@@ -342,7 +342,7 @@ class Slick_Slider_Options {
 	 * Array of Slick Slider options.
 	 *
 	 * @since 0.1
-	 * 
+	 *
 	 * @return array Slick Slider options.
 	 */
 	public static function defaults() {
@@ -404,6 +404,14 @@ class Slick_Slider_Options {
 				'type' => 'boolean',
 				'value' => true,
 			),
+			'class' => array(
+				'name' => __( 'Class', 'slick-slider' ),
+				'desc' => __( 'Set the slider class.', 'slick-slider' ),
+				'showOnSingleGallery' => true,
+				'setting' => 'class',
+				'type' => 'string',
+				'value' => '',
+			),
 			'asNavFor' => array(
 				'name' => __( 'asNavFor', 'slick-slider' ),
 				'desc' => __( 'Set the slider to be the navigation of other slider (Class or ID Name).', 'slick-slider' ),
@@ -415,22 +423,22 @@ class Slick_Slider_Options {
 			'appendArrows' => array(
 				'name' => __( 'appendArrows', 'slick-slider' ),
 				'desc' => __( 'Change where the navigation arrows are attached (Selector, htmlString, Array, Element, jQuery object).', 'slick-slider' ),
-				'showOnSingleGallery' => false,
+				'showOnSingleGallery' => true,
 				'setting' => 'sl_appendarrows',
 				'type' => 'string',
 				'value' => '',
 			),
 			'appendDots' => array(
 				'name' => __( 'appendDots', 'slick-slider' ),
-				'desc' => __( 'Change where the navigation dots are attached (Selector, htmlString, Array, Element, jQuery object)', 'slick-slider' ),
-				'showOnSingleGallery' => false,
+                'desc' => __( 'Change where the navigation dots are attached (Selector, htmlString, Array, Element, jQuery object)', 'slick-slider' ),
+                'showOnSingleGallery' => true,
 				'setting' => 'sl_appenddots',
 				'type' => 'string',
 				'value' => '',
 			),
 			'prevArrow' => array(
 				'name' => __( 'prevArrow', 'slick-slider' ),
-				'desc' => __( 'Allows you to select a node or customize the HTML for the "Previous" arrow.', 'slick-slider' ),
+                'desc' => __( 'Allows you to select a node or customize the HTML for the "Previous" arrow.', 'slick-slider' ),
 				'showOnSingleGallery' => false,
 				'setting' => 'sl_prevarrow',
 				'type' => 'string',
@@ -514,15 +522,15 @@ class Slick_Slider_Options {
 			'focusOnChange' => array(
 				'name' => __( 'focusOnChange', 'slick-slider' ),
 				'desc' => __( 'Puts focus on slide after change.', 'slick-slider' ),
-				'showOnSingleGallery' => false,
+                'showOnSingleGallery' => true,
 				'setting' => 'sl_focusonchange',
 				'type' => 'boolean',
 				'value' => false,
 			),
 			'focusOnSelect' => array(
 				'name' => __( 'focusOnSelect', 'slick-slider' ),
-				'desc' => __( 'Enable focus on selected element (click).', 'slick-slider' ),
-				'showOnSingleGallery' => false,
+                'desc' => __( 'Enable focus on selected element (click).', 'slick-slider' ),
+                'showOnSingleGallery' => true,
 				'setting' => 'sl_focusonselect',
 				'type' => 'boolean',
 				'value' => false,
